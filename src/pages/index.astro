@@ -1,18 +1,164 @@
 ---
-import AnimatedBackground from "../components/AnimatedBackground.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import StickySection from "../components/StickySection.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Md Azharuddin">
-  <div class="test">
-    <AnimatedBackground>
-      <h1>Test</h1>
-    </AnimatedBackground>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Md Azharuddin</h1>
+        <h2>Software Engineer at TCS</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor,
+          fugit?
+        </p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+      <ul>
+        <li>Github</li>
+        <li>Linkedin</li>
+        <li>Resume</li>
+        <li>Theme</li>
+      </ul>
+    </header>
+    <main>
+      <StickySection sectionTitle="About" id="about" class="section-gap">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius commodi
+        nisi delectus, odit enim illum laboriosam perferendis pariatur aliquam
+        esse reiciendis animi suscipit debitis. Cumque voluptatum commodi
+        officiis veritatis laboriosam? Vero itaque non molestias asperiores rem
+        a facere aliquid illum, maiores, illo voluptas iusto impedit. Libero quo
+        maxime ipsam sint, commodi saepe, ipsa cum fugit, dignissimos deleniti
+        nemo eveniet repellendus. Dignissimos, soluta ad. Et minima dignissimos
+        maxime iusto corrupti unde impedit possimus laborum aliquam porro
+        numquam quisquam praesentium totam, nemo sit repudiandae libero
+        cupiditate aliquid vero incidunt placeat eligendi veniam.
+      </StickySection>
+      <StickySection sectionTitle="Work" id="work" class="section-gap">
+        <ExperienceCard
+          start="2021"
+          end="present"
+          company="TCS"
+          link="tcs.com"
+          role="Full-stack Engineer"
+          skills={["NodeJS", "PHP", "JavaScript", "HTML", "CSS", "JQuery"]}
+        >
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos quis
+            est ipsam corporis hic quo molestiae maiores culpa in quam.
+          </p>
+        </ExperienceCard>
+        <ExperienceCard
+          start="2021"
+          end="2022"
+          company="TCS"
+          link="google.com"
+          role="Full-stack Engineer"
+          skills={["NodeJS", "PHP", "JavaScript", "HTML", "CSS", "JQuery"]}
+        >
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos quis
+            est ipsam corporis hic quo molestiae maiores culpa in quam.
+          </p>
+        </ExperienceCard>
+        <ExperienceCard
+          start="jan 2021"
+          end="mar 2021"
+          company="TCS"
+          link="google.com"
+          role="Full-stack Engineer"
+          skills={["NodeJS", "PHP", "JavaScript", "HTML", "CSS", "JQuery"]}
+        >
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos quis
+            est ipsam corporis hic quo molestiae maiores culpa in quam.
+          </p>
+        </ExperienceCard>
+      </StickySection>
+      <StickySection sectionTitle="Projects" id="projects">
+        <ProjectCard
+          name="Something"
+          imageUrl="./"
+          link="google.com"
+          skills={["HTML", "CSS", "JS"]}
+        >
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+            voluptate voluptates magni placeat earum quaerat, consectetur animi
+            aspernatur quisquam excepturi.
+          </p>
+        </ProjectCard>
+        <ProjectCard
+          name="Something"
+          imageUrl="./"
+          link="google.com"
+          skills={["HTML", "CSS", "JS"]}
+        >
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+            voluptate voluptates magni placeat earum quaerat, consectetur animi
+            aspernatur quisquam excepturi.
+          </p>
+        </ProjectCard>
+        <ProjectCard
+          name="Something"
+          imageUrl="./"
+          link="google.com"
+          skills={["HTML", "CSS", "JS"]}
+        >
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+            voluptate voluptates magni placeat earum quaerat, consectetur animi
+            aspernatur quisquam excepturi.
+          </p>
+        </ProjectCard>
+      </StickySection>
+    </main>
+    <footer>
+      <p>
+        This site is built using <a href="https://astro.build/">Astro</a>
+        framework. Design is inspired by the amazing work of <a
+          href="https://brittanychiang.com/">Brittany Chiang</a
+        >.
+      </p>
+    </footer>
   </div>
 </Layout>
 
 <style>
-  .test {
-    --color: red;
+  header {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .section-gap {
+    padding-block-end: 6rem;
+  }
+
+  @media screen and (min-width: 64em) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+      padding-block: 6rem;
+      position: sticky;
+      top: 0;
+    }
+
+    main {
+      padding-block: 6rem;
+    }
   }
 </style>

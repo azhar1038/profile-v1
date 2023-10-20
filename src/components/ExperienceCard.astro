@@ -1,0 +1,19 @@
+---
+import IndexCard from "./IndexCard.astro";
+export interface Props {
+  start: string;
+  end: string;
+  company: string;
+  role: string;
+  link: string;
+  skills: string[];
+}
+
+const { start, end, company, role, link, skills } = Astro.props;
+---
+
+<IndexCard list={skills}>
+  <span slot="lead">{start} - {end}</span>
+  <a href={link} slot="header">{role} <span>·</span> {company}</a>
+  <slot slot="body" />
+</IndexCard>

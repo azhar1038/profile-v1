@@ -1,0 +1,19 @@
+---
+import IndexCard from "./IndexCard.astro";
+export interface Props {
+  name: string;
+  imageUrl: string;
+  link: string;
+  skills: string[];
+}
+
+const { name, imageUrl, link, skills } = Astro.props;
+---
+
+<IndexCard list={skills}>
+  <span slot="lead">
+    <img src="./random" alt={`Image for project ${name}`} />
+  </span>
+  <a href={link} slot="header">{name}</a>
+  <slot slot="body" />
+</IndexCard>

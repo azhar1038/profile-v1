@@ -1,0 +1,24 @@
+---
+interface Props {
+  list?: string[];
+}
+
+const { list } = Astro.props;
+---
+
+<div class="card">
+  <slot name="lead" />
+  <h3 class="designation">
+    <slot name="header" />
+  </h3>
+  <slot name="body" />
+  {
+    list ? (
+      <ul>
+        {list.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    ) : null
+  }
+</div>

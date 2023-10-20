@@ -1,0 +1,28 @@
+---
+interface Props {
+  sectionTitle: string;
+  id: string;
+  class?: string;
+}
+
+const { sectionTitle, id, class: className, ...rest } = Astro.props;
+---
+
+<section id={id} class={className} {...rest}>
+  <h2>{sectionTitle}</h2>
+  <slot />
+</section>
+
+<style>
+  h2 {
+    position: sticky;
+    background-color: palegoldenrod;
+    top: 0;
+  }
+
+  @media screen and (min-width: 64em) {
+    h2 {
+      display: none;
+    }
+  }
+</style>
