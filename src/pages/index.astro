@@ -3,6 +3,10 @@ import ExperienceCard from "../components/ExperienceCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import StickySection from "../components/StickySection.astro";
 import Layout from "../layouts/Layout.astro";
+
+import craiyon from "../assets/images/craiyon-server.jpg";
+import upiIndia from "../assets/images/upi-india.png";
+import ccm from "../assets/images/ccm.png";
 ---
 
 <Layout title="Md Azharuddin">
@@ -10,10 +14,10 @@ import Layout from "../layouts/Layout.astro";
     <header>
       <div>
         <h1>Md Azharuddin</h1>
-        <h2>Software Engineer at TCS</h2>
+        <h2>Full-Stack Engineer at TCS</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor,
-          fugit?
+          I have a knack for building accessible and responsive apps for web and
+          mobile.
         </p>
       </div>
       <nav>
@@ -26,107 +30,178 @@ import Layout from "../layouts/Layout.astro";
       <ul>
         <li>Github</li>
         <li>Linkedin</li>
-        <li>Resume</li>
         <li>Theme</li>
+        <li>Resume</li>
+        <li>Mail</li>
       </ul>
     </header>
     <main>
       <StickySection sectionTitle="About" id="about" class="section-gap">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius commodi
-        nisi delectus, odit enim illum laboriosam perferendis pariatur aliquam
-        esse reiciendis animi suscipit debitis. Cumque voluptatum commodi
-        officiis veritatis laboriosam? Vero itaque non molestias asperiores rem
-        a facere aliquid illum, maiores, illo voluptas iusto impedit. Libero quo
-        maxime ipsam sint, commodi saepe, ipsa cum fugit, dignissimos deleniti
-        nemo eveniet repellendus. Dignissimos, soluta ad. Et minima dignissimos
-        maxime iusto corrupti unde impedit possimus laborum aliquam porro
-        numquam quisquam praesentium totam, nemo sit repudiandae libero
-        cupiditate aliquid vero incidunt placeat eligendi veniam.
+        <p>
+          Ever since my childhood when I first stumbled upon HTML, I have always
+          been interested in creating things. Till now I have got my hands dirty
+          on writing scripts, creating websites and web apps, android apps and
+          even ML models for our college, a few startups and a huge MNC.
+        </p>
+        <p>
+          Currently I am mostly involved in designing, developing and improving
+          the webapps for one of our client at TCS while also making cool stuff
+          and learing new technologies during my free time. When I am not in
+          front of screen, you can find my roaming around exploring places or
+          folding papers.
+        </p>
       </StickySection>
       <StickySection sectionTitle="Work" id="work" class="section-gap">
         <ExperienceCard
           start="2021"
           end="present"
           company="TCS"
-          link="tcs.com"
+          link="https://www.tcs.com/"
           role="Full-stack Engineer"
-          skills={["NodeJS", "PHP", "JavaScript", "HTML", "CSS", "JQuery"]}
+          skills={[
+            "PHP",
+            "NodeJS",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "JQuery",
+            "MySQL",
+            "REST APIs",
+          ]}
         >
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos quis
-            est ipsam corporis hic quo molestiae maiores culpa in quam.
-          </p>
+          <ul>
+            <li>Handling a small team of developers.</li>
+            <li>Complete management and development of web app for client.</li>
+            <li>
+              Implementing new features and improving the UI/UX of the app.
+            </li>
+            <li>
+              Improving app performance by optimizing code and database queries.
+            </li>
+            <li>
+              Implementing security practices to protect sensitive data ensuring
+              compliance to internal policies.
+            </li>
+            <li>
+              Developing RESTful APIs allowing other internal tool to access
+              data.
+            </li>
+            <li>
+              Collaborating with other teams to introduce new features or while
+              implementing breaking changes.
+            </li>
+            <li>
+              Participating in discussions with stakeholders to find best
+              possible solutions.
+            </li>
+            <li>Providing Knowledge Transfer (KT) Sessions to new members.</li>
+          </ul>
         </ExperienceCard>
         <ExperienceCard
           start="2021"
-          end="2022"
+          end="present"
           company="TCS"
-          link="google.com"
-          role="Full-stack Engineer"
-          skills={["NodeJS", "PHP", "JavaScript", "HTML", "CSS", "JQuery"]}
+          link="https://www.tcs.com/"
+          role="Part-time Automation Engineer"
+          skills={["Python", "Groovy", "Shell Script", "Jenkins"]}
         >
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos quis
-            est ipsam corporis hic quo molestiae maiores culpa in quam.
+            Creating scripts and jenkins pipelines to automate every day manual
+            work for our team or some other team. Some of my scripts have helped
+            reduce time for tasks that used to take around hour to mere 5
+            minutes.
           </p>
         </ExperienceCard>
         <ExperienceCard
           start="jan 2021"
-          end="mar 2021"
-          company="TCS"
-          link="google.com"
-          role="Full-stack Engineer"
-          skills={["NodeJS", "PHP", "JavaScript", "HTML", "CSS", "JQuery"]}
+          end="feb 2021"
+          company="Bipolar Factory"
+          link="https://www.bipolarfactory.com/"
+          role="Intern"
+          skills={["Dart", "Flutter", "Firebase"]}
         >
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos quis
-            est ipsam corporis hic quo molestiae maiores culpa in quam.
+            I worked here as a Flutter developer intern and helped in creating
+            an attendance monitoring app.
           </p>
         </ExperienceCard>
+        <ExperienceCard
+          start="may 2020"
+          end="jun 2020"
+          company="DeltApps"
+          link="https://www.linkedin.com/company/deltapps11/"
+          role="Intern"
+          skills={["Dart", "Flutter", "Firebase"]}
+        >
+          <p>
+            I worked here as a Flutter developer intern and helped in creating
+            an e-grocery delivery app.
+          </p>
+        </ExperienceCard>
+        <a href="#">Check full Résumé</a>
       </StickySection>
       <StickySection sectionTitle="Projects" id="projects">
         <ProjectCard
-          name="Something"
-          imageUrl="./"
-          link="google.com"
-          skills={["HTML", "CSS", "JS"]}
+          name="Craiyon Server"
+          image={craiyon}
+          link="https://github.com/azhar1038/craiyon-server-express"
+          skills={[
+            "Typescript",
+            "NodeJS",
+            "Express",
+            "MySQL",
+            "Prisma",
+            "Shell Script",
+            "REST APIs",
+            "JWT",
+          ]}
         >
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
-            voluptate voluptates magni placeat earum quaerat, consectetur animi
-            aspernatur quisquam excepturi.
+            Craiyon is one of my personal project that uses the DALL·E 2 API to
+            generate and store images. It allows users to login and generate
+            images based on text input and store it privately or make it public
+            for all other users to see. For authentication it uses Json Web
+            Token along with refresh token rotation to extra security. Frontend
+            is still not ready but you can clone the repo and try it yourself
+            locally!
           </p>
         </ProjectCard>
         <ProjectCard
-          name="Something"
-          imageUrl="./"
-          link="google.com"
-          skills={["HTML", "CSS", "JS"]}
+          name="UPI India - Flutter plugin"
+          image={upiIndia}
+          link="https://pub.dev/packages/upi_india"
+          skills={["Java", "Dart", "Flutter", "Android"]}
         >
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
-            voluptate voluptates magni placeat earum quaerat, consectetur animi
-            aspernatur quisquam excepturi.
+            I created this plugin to integrate payment in flutter apps using
+            intent calls to UPI apps. It has around 50 stars in Github and 100+
+            likes in Pub. Unfortunately due to improved security in most major
+            UPI Apps, support for intent calls is not very stable now resulting
+            in archiving of this project.
           </p>
         </ProjectCard>
         <ProjectCard
-          name="Something"
-          imageUrl="./"
-          link="google.com"
-          skills={["HTML", "CSS", "JS"]}
+          name="CCM - Tele ICU"
+          image={ccm}
+          link="https://play.google.com/store/apps/details?id=com.az.med_plus"
+          skills={["Dart", "Flutter", "Firebase Cloud Messaging", "REST APIs"]}
         >
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
-            voluptate voluptates magni placeat earum quaerat, consectetur animi
-            aspernatur quisquam excepturi.
+            Me and some of my friends created this app for a local clinic during
+            pandemic to help them manage and track patients details and send
+            notifications to the doctors attending them based on the report.
+            Later we also added a calculator for some common calculations that
+            nurses were doing manually. I worked on the app while others did the
+            backend.
           </p>
         </ProjectCard>
+        <a href="#">Check all projects</a>
       </StickySection>
     </main>
     <footer>
       <p>
         This site is built using <a href="https://astro.build/">Astro</a>
-        framework. Design is inspired by the amazing work of <a
+         framework. Design is inspired by the amazing work of <a
           href="https://brittanychiang.com/">Brittany Chiang</a
         >.
       </p>
@@ -155,10 +230,15 @@ import Layout from "../layouts/Layout.astro";
       padding-block: 6rem;
       position: sticky;
       top: 0;
+      grid-row: 1 / 3;
     }
 
     main {
       padding-block: 6rem;
+    }
+
+    footer {
+      padding-block-end: 6rem;
     }
   }
 </style>
