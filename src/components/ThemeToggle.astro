@@ -107,19 +107,19 @@
     transition: transform var(--time) var(--transition);
   }
 
-  [data-theme="dark"] .sun {
+  :global([data-theme="dark"]) .sun {
     transform: scale(1.75);
   }
 
-  [data-theme="dark"] .sun-beams {
+  :global([data-theme="dark"]) .sun-beams {
     opacity: 0;
   }
 
-  [data-theme="dark"] .sun-beams > circle {
+  :global([data-theme="dark"]) .sun-beams > circle {
     transform: scale(0);
   }
 
-  [data-theme="dark"] .moon > circle {
+  :global([data-theme="dark"]) .moon > circle {
     transform: translateX(-7px);
     transition-delay: calc(var(--time) / 2);
   }
@@ -129,7 +129,7 @@
       transition: cx var(--time) var(--transition);
     }
 
-    [data-theme="dark"] .moon > circle {
+    :global([data-theme="dark"]) .moon > circle {
       transform: translateX(0);
       cx: 17;
     }

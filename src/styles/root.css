@@ -10,12 +10,18 @@
   --text2-light: var(--palette-clr-5);
 
   --bg-dark: var(--palette-clr-5);
-  --text1-dark: var(--palette-clr-2);
-  --text2-dark: var(--palette-clr-1);
+  --text1-dark: var(--palette-clr-1);
+  --text2-dark: var(--palette-clr-2);
 
   --bg: var(--bg-light);
   --text1: var(--text1-light);
   --text2: var(--text2-light);
 
   --ff-primary: "Poppins", sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: var(--bg-dark);
+  --text1: var(--text1-dark);
+  --text2: var(--text2-dark);
 }
