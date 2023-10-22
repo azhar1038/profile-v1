@@ -15,7 +15,7 @@ const { name, image, link, skills } = Astro.props;
   <span slot="lead">
     <Image src={image} alt={`Image for project ${name}`} class="image" />
   </span>
-  <a href={link} slot="header">{name}</a>
+  <a href={link} slot="header" class="interactable">{name}</a>
   <slot slot="body" />
 </IndexCard>
 

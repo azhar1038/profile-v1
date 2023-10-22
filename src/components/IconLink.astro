@@ -7,7 +7,10 @@ interface Props {
 const { title, url } = Astro.props;
 ---
 
-<a href={url}><span class="sr-only">{title}</span><slot /></a>
+<a href={url} class="interactable">
+  <span class="sr-only">{title}</span>
+  <slot />
+</a>
 
 <style>
   a {

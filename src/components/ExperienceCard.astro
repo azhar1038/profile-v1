@@ -18,7 +18,7 @@ const { start, end, company, role, link, skills } = Astro.props;
     <div aria-hidden="true"></div>
     <span>{start}</span>
   </div>
-  <a href={link} slot="header" class="header">
+  <a href={link} slot="header" class="header | interactable">
     {role}
     <span>•</span>
     {company}

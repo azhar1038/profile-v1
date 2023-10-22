@@ -1,19 +1,19 @@
 <nav id="nav-bar">
   <ul class="plain-list">
     <li>
-      <a href="#about">
+      <a href="#about" class="interactable">
         <div class="indicator" aria-hidden="true"></div>
          About
       </a>
     </li>
     <li>
-      <a href="#work">
+      <a href="#work" class="interactable">
         <div class="indicator" aria-hidden="true"></div>
          Work
       </a>
     </li>
     <li>
-      <a href="#projects">
+      <a href="#projects" class="interactable">
         <div class="indicator" aria-hidden="true"></div>
          Projects
       </a>
@@ -37,6 +37,7 @@
 
   a {
     text-decoration: none;
+    color: inherit;
   }
 
   .indicator-wrapper {
@@ -50,7 +51,7 @@
     }
 
     a {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 1rem;
       padding-block: 0.5rem;

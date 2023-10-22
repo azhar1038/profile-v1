@@ -1,0 +1,77 @@
+<div id="trailer-outer" aria-hidden="true"></div>
+<div id="trailer-inner" aria-hidden="true"></div>
+
+<style>
+  #trailer-inner,
+  #trailer-outer {
+    height: var(--_size);
+    aspect-ratio: 1;
+    border-radius: var(--_size);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  #trailer-outer {
+    --_size: 1.5rem;
+    border: 1px solid var(--text1);
+  }
+
+  #trailer-inner {
+    --_size: 4px;
+    background-color: var(--text1);
+  }
+</style>
+
+<script>
+  const outerTrailer = document.getElementById("trailer-outer")!!;
+  const innerTrailer = document.getElementById("trailer-inner")!!;
+
+  const animateTrailer = (e: MouseEvent, interacting: boolean) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    const outerX = x - outerTrailer.offsetWidth / 2;
+    const outerY = y - outerTrailer.offsetHeight / 2;
+
+    const innerX = x - innerTrailer.offsetWidth / 2;
+    const innerY = y - innerTrailer.offsetHeight / 2;
+
+    outerTrailer.animate(
+      {
+        transform: `translate(${outerX}px, ${outerY}px) scale(${
+          interacting ? 2 : 1
+        })`,
+        opacity: interacting ? 0.3 : 1,
+      },
+      {
+        duration: 800,
+        fill: "forwards",
+      }
+    );
+
+    innerTrailer.animate(
+      {
+        transform: `translate(${innerX}px, ${innerY}px)`,
+        opacity: interacting ? 0 : 1,
+      },
+      {
+        duration: 400,
+        fill: "forwards",
+      }
+    );
+  };
+
+  if (outerTrailer && innerTrailer) {
+    window.addEventListener("mousemove", (event) => {
+      const interactable = (event.target as HTMLElement).closest(
+        ".interactable"
+      );
+      const interacting = interactable !== null;
+
+      animateTrailer(event, interacting);
+    });
+  }
+</script>
