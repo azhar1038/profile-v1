@@ -1,0 +1,89 @@
+<nav>
+  <ul class="plain-list">
+    <li>
+      <a href="#about" data-active="true">
+        <div class="indicator" aria-hidden="true"></div>
+         About
+      </a>
+    </li>
+    <li>
+      <a href="#work"><div class="indicator" aria-hidden="true"></div>Work</a>
+    </li>
+    <li>
+      <a href="#projects">
+        <div class="indicator" aria-hidden="true"></div>
+         Projects
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    align-self: center;
+  }
+
+  ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  ul > li {
+    color: var(--text2);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .indicator-wrapper {
+    display: none;
+  }
+
+  @media screen and (min-width: 64em) {
+    ul {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-block: 0.5rem;
+    }
+
+    .indicator {
+      display: block;
+      position: relative;
+      background-color: var(--text2);
+      height: 2px;
+      width: 0px;
+      transition: width 200ms ease-in-out;
+    }
+
+    .indicator::before,
+    .indicator::after {
+      content: "";
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      border-radius: 8px;
+      background-color: var(--text2);
+      top: -3px;
+    }
+
+    .indicator::before {
+      left: 0;
+    }
+
+    .indicator::after {
+      right: -8px;
+    }
+
+    a:hover > .indicator,
+    a[data-active="true"] > .indicator {
+      width: 2rem;
+    }
+  }
+</style>

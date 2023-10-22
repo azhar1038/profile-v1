@@ -13,6 +13,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 import craiyon from "../assets/images/craiyon-server.jpg";
 import upiIndia from "../assets/images/upi-india.png";
 import ccm from "../assets/images/ccm.png";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <Layout title="Md Azharuddin">
@@ -26,13 +27,7 @@ import ccm from "../assets/images/ccm.png";
           mobile.
         </p>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#projects">Projects</a></li>
-        </ul>
-      </nav>
+      <Navbar />
       <ul class="social | plain-list flex flex-wrap">
         <li>
           <IconLink title="Github" url="https://github.com/azhar1038/">
