@@ -1,13 +1,16 @@
-<nav>
+<nav id="nav-bar">
   <ul class="plain-list">
     <li>
-      <a href="#about" data-active="true">
+      <a href="#about">
         <div class="indicator" aria-hidden="true"></div>
          About
       </a>
     </li>
     <li>
-      <a href="#work"><div class="indicator" aria-hidden="true"></div>Work</a>
+      <a href="#work">
+        <div class="indicator" aria-hidden="true"></div>
+         Work
+      </a>
     </li>
     <li>
       <a href="#projects">
@@ -87,3 +90,81 @@
     }
   }
 </style>
+
+<script>
+  const sectionIds = ["about", "work", "projects"];
+  const sections: Map<string, HTMLElement> = new Map();
+  const navLinks: Map<string, HTMLAnchorElement> = new Map();
+
+  const navbar = document.getElementById("nav-bar")!!;
+  sectionIds.forEach((id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      sections.set(id, section);
+    } else {
+      console.error(`No section with id: ${id} found.`);
+    }
+
+    const navLink: HTMLAnchorElement | null = navbar.querySelector(
+      `a[href="#${id}"]`
+    );
+
+    if (navLink) {
+      navLinks.set(id, navLink);
+    } else {
+      console.error(`No anchor tag with href #${id} found.`);
+    }
+  });
+
+  function calculateThreshold(
+    section: HTMLElement,
+    minVisibility: number = 0.5
+  ) {
+    const sectionHeight = section.getBoundingClientRect().height;
+    return Math.min(1, (window.innerHeight / sectionHeight) * minVisibility);
+  }
+
+  function registerObserver(section: HTMLElement) {
+    const threshold = calculateThreshold(section);
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: threshold,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const sectionId = entry.target.id;
+        const link = navLinks.get(sectionId);
+        if (!link) return;
+
+        if (entry.isIntersecting) {
+          navLinks.forEach((element) => {
+            element.dataset.active = "false";
+          });
+          link.dataset.active = "true";
+        }
+      });
+    }, options);
+
+    observer.observe(section);
+  }
+
+  sections.forEach((section) => registerObserver(section));
+
+  navLinks.forEach((link, targetId) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetElement = sections.get(targetId);
+      if (targetElement) {
+        const yOffset = 0;
+
+        window.scrollTo({
+          top: targetElement.offsetTop + yOffset,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+</script>
