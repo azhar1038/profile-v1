@@ -10,7 +10,9 @@ const { sectionTitle, id, class: className, ...rest } = Astro.props;
 
 <section id={id} class={className} {...rest}>
   <h2>{sectionTitle}</h2>
-  <slot />
+  <div>
+    <slot />
+  </div>
 </section>
 
 <style>
@@ -20,9 +22,17 @@ const { sectionTitle, id, class: className, ...rest } = Astro.props;
     top: 0;
   }
 
+  div {
+    padding-inline: 1.5rem;
+  }
+
   @media screen and (min-width: 64em) {
     h2 {
       display: none;
+    }
+
+    div {
+      padding-inline: 0;
     }
   }
 </style>

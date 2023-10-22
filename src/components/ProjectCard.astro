@@ -13,8 +13,20 @@ const { name, image, link, skills } = Astro.props;
 
 <IndexCard list={skills}>
   <span slot="lead">
-    <Image src={image} alt={`Image for project ${name}`} />
+    <Image src={image} alt={`Image for project ${name}`} class="image" />
   </span>
   <a href={link} slot="header">{name}</a>
   <slot slot="body" />
 </IndexCard>
+
+<style>
+  .image {
+    object-fit: contain;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>

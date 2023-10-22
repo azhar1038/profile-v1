@@ -1,0 +1,21 @@
+:root {
+  --palette-clr-1: hsl(21 35% 92%);
+  --palette-clr-2: hsl(11 24% 72%);
+  --palette-clr-3: hsl(309 6% 58%);
+  --palette-clr-4: hsl(232 17% 35%);
+  --palette-clr-5: hsl(240 27% 18%);
+
+  --bg-light: var(--palette-clr-1);
+  --text1-light: var(--palette-clr-4);
+  --text2-light: var(--palette-clr-5);
+
+  --bg-dark: var(--palette-clr-5);
+  --text1-dark: var(--palette-clr-2);
+  --text2-dark: var(--palette-clr-1);
+
+  --bg: var(--bg-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+
+  --ff-primary: "Poppins", sans-serif;
+}

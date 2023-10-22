@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  url: string;
+}
+
+const { title, url } = Astro.props;
+---
+
+<a href={url}><span class="sr-only">{title}</span><slot /></a>
+
+<style>
+  a {
+    color: var(--text1);
+    display: block;
+  }
+
+  a:hover {
+    color: var(--text2);
+  }
+</style>

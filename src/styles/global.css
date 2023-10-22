@@ -1,0 +1,46 @@
+body {
+  color: var(--text1);
+  font-family: var(--ff-primary);
+}
+
+.plain-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.pd-sm-lft {
+  padding-inline-start: 1em;
+}
+
+.mr-sm-top {
+  margin-block-start: 1em;
+}
+
+.mr-sm-btm {
+  margin-block-end: 1em;
+}
+
+.mr-md-btm {
+  margin-block-end: 2em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

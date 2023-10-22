@@ -1,4 +1,5 @@
 ---
+import Chip from "./Chip.astro";
 interface Props {
   list?: string[];
 }
@@ -7,18 +8,44 @@ const { list } = Astro.props;
 ---
 
 <div class="card">
-  <slot name="lead" />
-  <h3 class="designation">
+  <div class="lead">
+    <slot name="lead" />
+  </div>
+  <h3 class="designation | mr-sm-btm">
     <slot name="header" />
   </h3>
   <slot name="body" />
   {
     list ? (
-      <ul>
+      <ul class="plain-list flex flex-wrap mr-sm-top">
         {list.map((item) => (
-          <li>{item}</li>
+          <li>
+            <Chip data={item} />
+          </li>
         ))}
       </ul>
     ) : null
   }
 </div>
+
+<style>
+  .card {
+    display: grid;
+    padding-block: 2rem;
+  }
+
+  h3 {
+    color: var(--text2);
+  }
+
+  @media screen and (min-width: 40em) {
+    .card {
+      grid-template-columns: 8rem 1fr;
+    }
+
+    .lead {
+      grid-row: 1 / 4;
+      padding-inline-end: 1em;
+    }
+  }
+</style>

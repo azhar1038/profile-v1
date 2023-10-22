@@ -13,7 +13,82 @@ const { start, end, company, role, link, skills } = Astro.props;
 ---
 
 <IndexCard list={skills}>
-  <span slot="lead">{start} - {end}</span>
-  <a href={link} slot="header">{role} <span>•</span> {company}</a>
+  <div slot="lead" class="lead">
+    <span>{end}</span>
+    <div aria-hidden="true"></div>
+    <span>{start}</span>
+  </div>
+  <a href={link} slot="header" class="header">
+    {role}
+    <span>•</span>
+    {company}
+  </a>
   <slot slot="body" />
 </IndexCard>
+
+<style>
+  .lead {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-transform: uppercase;
+    padding-block-end: 0.5rem;
+  }
+
+  .lead > div {
+    position: relative;
+    width: 2rem;
+    height: 2px;
+    background-color: var(--palette-clr-3);
+    margin-inline: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .header {
+    text-decoration: none;
+  }
+
+  .header > span {
+    padding-inline: 0.5em;
+  }
+
+  @media screen and (min-width: 40em) {
+    .lead {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      text-align: center;
+      height: 100%;
+      padding-block: 0;
+      padding-inline-end: 1rem;
+    }
+
+    .lead > div {
+      height: calc(100% - 40px);
+      width: 2px;
+      justify-self: center;
+    }
+
+    .lead > div::before,
+    .lead > div::after {
+      content: "";
+      position: absolute;
+      height: 12px;
+      aspect-ratio: 1;
+      border-radius: 20px;
+      background-color: var(--palette-clr-3);
+      left: -5px;
+    }
+
+    .lead > div::before {
+      top: 0px;
+    }
+
+    .lead > div::after {
+      bottom: 0px;
+    }
+  }
+</style>

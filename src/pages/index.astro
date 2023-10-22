@@ -3,6 +3,12 @@ import ExperienceCard from "../components/ExperienceCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import StickySection from "../components/StickySection.astro";
 import Layout from "../layouts/Layout.astro";
+import IconLink from "../components/IconLink.astro";
+import Github from "../components/icons/Github.astro";
+import Linkedin from "../components/icons/Linkedin.astro";
+import Mail from "../components/icons/Mail.astro";
+import Resume from "../components/icons/Resume.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 
 import craiyon from "../assets/images/craiyon-server.jpg";
 import upiIndia from "../assets/images/upi-india.png";
@@ -27,17 +33,34 @@ import ccm from "../assets/images/ccm.png";
           <li><a href="#projects">Projects</a></li>
         </ul>
       </nav>
-      <ul>
-        <li>Github</li>
-        <li>Linkedin</li>
-        <li>Theme</li>
-        <li>Resume</li>
-        <li>Mail</li>
+      <ul class="social | plain-list flex flex-wrap">
+        <li>
+          <IconLink title="Github" url="https://github.com/azhar1038/">
+            <Github />
+          </IconLink>
+        </li>
+        <li>
+          <IconLink
+            title="Linkedin"
+            url="https://www.linkedin.com/in/mdazhar1038/"
+          >
+            <Linkedin />
+          </IconLink>
+        </li>
+        <li><ThemeToggle /></li>
+        <li>
+          <IconLink title="Email" url="mailto:mdazhar.1038@gmail.com">
+            <Mail />
+          </IconLink>
+        </li>
+        <li>
+          <IconLink title="My Resume" url="./"><Resume /></IconLink>
+        </li>
       </ul>
     </header>
     <main>
       <StickySection sectionTitle="About" id="about" class="section-gap">
-        <p>
+        <p class="mr-sm-btm">
           Ever since my childhood when I first stumbled upon HTML, I have always
           been interested in creating things. Till now I have got my hands dirty
           on writing scripts, creating websites and web apps, android apps and
@@ -53,7 +76,7 @@ import ccm from "../assets/images/ccm.png";
       </StickySection>
       <StickySection sectionTitle="Work" id="work" class="section-gap">
         <ExperienceCard
-          start="2021"
+          start="oct 2021"
           end="present"
           company="TCS"
           link="https://www.tcs.com/"
@@ -69,7 +92,7 @@ import ccm from "../assets/images/ccm.png";
             "REST APIs",
           ]}
         >
-          <ul>
+          <ul class="pd-sm-lft">
             <li>Handling a small team of developers.</li>
             <li>Complete management and development of web app for client.</li>
             <li>
@@ -98,11 +121,11 @@ import ccm from "../assets/images/ccm.png";
           </ul>
         </ExperienceCard>
         <ExperienceCard
-          start="2021"
+          start="aug 2021"
           end="present"
           company="TCS"
           link="https://www.tcs.com/"
-          role="Part-time Automation Engineer"
+          role="Automation Engineer"
           skills={["Python", "Groovy", "Shell Script", "Jenkins"]}
         >
           <p>
@@ -216,8 +239,28 @@ import ccm from "../assets/images/ccm.png";
     grid-template-rows: auto 1fr auto;
   }
 
+  header h1 {
+    font-size: 3rem;
+    color: var(--text2);
+  }
+
+  header h2 {
+    font-size: 1.2rem;
+    margin-block: 1em;
+  }
+
+  header p {
+    max-width: 35ch;
+  }
+
   .section-gap {
     padding-block-end: 6rem;
+  }
+
+  .social {
+    align-items: center;
+    gap: 1rem;
+    line-height: 0;
   }
 
   @media screen and (min-width: 64em) {
