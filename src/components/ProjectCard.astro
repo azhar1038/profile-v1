@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import IndexCard from "./IndexCard.astro";
+import AnimatedLink from "./AnimatedLink.astro";
 export interface Props {
   name: string;
   image: ImageMetadata;
@@ -15,7 +16,9 @@ const { name, image, link, skills } = Astro.props;
   <span slot="lead">
     <Image src={image} alt={`Image for project ${name}`} class="image" />
   </span>
-  <a href={link} slot="header" class="interactable">{name}</a>
+  <AnimatedLink href={link} class="interactable" slot="header">
+    {name}
+  </AnimatedLink>
   <slot slot="body" />
 </IndexCard>
 

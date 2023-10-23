@@ -1,0 +1,42 @@
+---
+interface Props {
+  href: string;
+  class?: string;
+}
+
+const { href, class: className, ...rest } = Astro.props;
+---
+
+<a href={href} class:list={[className]} {...rest}>
+  <div>
+    <slot />
+  </div>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</a>
+
+<style>
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    height: 1rem;
+    aspect-ratio: 1;
+    margin-inline: 0.5rem;
+    transition: transform 200ms ease-in-out;
+  }
+
+  a:hover svg {
+    transform: translateX(0.5rem);
+  }
+</style>
