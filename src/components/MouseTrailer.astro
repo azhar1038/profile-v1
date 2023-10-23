@@ -2,26 +2,29 @@
 <div id="trailer-inner" aria-hidden="true"></div>
 
 <style>
-  #trailer-inner,
-  #trailer-outer {
-    height: var(--_size);
-    aspect-ratio: 1;
-    border-radius: var(--_size);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    pointer-events: none;
-  }
+  @media (pointer: fine) {
+    #trailer-inner,
+    #trailer-outer {
+      height: var(--_size);
+      aspect-ratio: 1;
+      border-radius: var(--_size);
+      opacity: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      pointer-events: none;
+    }
 
-  #trailer-outer {
-    --_size: 1.5rem;
-    border: 1px solid var(--text1);
-  }
+    #trailer-outer {
+      --_size: 1.5rem;
+      border: 1px solid var(--text1);
+    }
 
-  #trailer-inner {
-    --_size: 4px;
-    background-color: var(--text1);
+    #trailer-inner {
+      --_size: 4px;
+      background-color: var(--text1);
+    }
   }
 </style>
 
@@ -64,7 +67,11 @@
     );
   };
 
-  if (outerTrailer && innerTrailer) {
+  if (
+    window.matchMedia("(pointer: fine)").matches &&
+    outerTrailer &&
+    innerTrailer
+  ) {
     window.addEventListener("mousemove", (event) => {
       const interactable = (event.target as HTMLElement).closest(
         ".interactable"

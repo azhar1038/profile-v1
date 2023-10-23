@@ -9,17 +9,24 @@ const { sectionTitle, id, class: className, ...rest } = Astro.props;
 ---
 
 <section id={id} class={className} {...rest}>
-  <h2>{sectionTitle}</h2>
+  <div class="title-container">
+    <h2>{sectionTitle}</h2>
+  </div>
   <div>
     <slot />
   </div>
 </section>
 
 <style>
-  h2 {
+  .title-container {
     position: sticky;
-    background-color: palegoldenrod;
+    background-color: hsl(var(--bg-hsl) / 0.75);
+    color: var(--text1);
     top: 0;
+    text-transform: uppercase;
+    padding-block: 1em;
+    backdrop-filter: blur(6px);
+    z-index: 10;
   }
 
   div {
@@ -27,7 +34,7 @@ const { sectionTitle, id, class: className, ...rest } = Astro.props;
   }
 
   @media screen and (min-width: 64em) {
-    h2 {
+    .title-container {
       display: none;
     }
 

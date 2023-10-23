@@ -1,0 +1,114 @@
+---
+import IconLink from "./IconLink.astro";
+import Navbar from "./Navbar.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import Github from "./icons/Github.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import Mail from "./icons/Mail.astro";
+import Resume from "./icons/Resume.astro";
+---
+
+<header>
+  <div>
+    <h1 class="interactable">Md Azharuddin</h1>
+    <h2>Full-Stack Engineer at TCS</h2>
+    <p>
+      I have a knack for building accessible and responsive apps for web and
+      mobile.
+    </p>
+  </div>
+  <Navbar />
+  <ul class="social | plain-list flex flex-wrap">
+    <li>
+      <IconLink title="Github" url="https://github.com/azhar1038/">
+        <Github />
+      </IconLink>
+    </li>
+    <li>
+      <IconLink title="Linkedin" url="https://www.linkedin.com/in/mdazhar1038/">
+        <Linkedin />
+      </IconLink>
+    </li>
+    <li><ThemeToggle /></li>
+    <li>
+      <IconLink title="Email" url="mailto:mdazhar.1038@gmail.com">
+        <Mail />
+      </IconLink>
+    </li>
+    <li>
+      <IconLink
+        title="My Resume"
+        url="https://drive.google.com/file/d/1uxa5DogpW9DGgBfP32ySv0upkqKh_c-8/view?usp=sharing"
+      >
+        <Resume />
+      </IconLink>
+    </li>
+  </ul>
+</header>
+
+<style>
+  header {
+    height: 100lvh;
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: var(--text2);
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-block: 1em;
+  }
+
+  p {
+    max-width: 35ch;
+  }
+
+  .social {
+    align-items: center;
+    gap: 1rem;
+    line-height: 0;
+  }
+
+  @media screen and (max-width: 64em) {
+    header {
+      text-align: center;
+      padding-block: 3rem;
+    }
+
+    header > div {
+      align-self: center;
+    }
+
+    p {
+      margin-inline: auto;
+    }
+
+    .social {
+      justify-content: center;
+      margin-block-start: 2rem;
+      margin-block-end: calc(100lvh - 100svh);
+    }
+  }
+
+  @media screen and (min-width: 64em) {
+    header {
+      grid-template-rows: auto 1fr auto;
+      padding-block: 6rem;
+      position: sticky;
+      top: 0;
+      grid-row: 1 / 3;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+</style>

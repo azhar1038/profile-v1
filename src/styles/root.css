@@ -5,14 +5,17 @@
   --palette-clr-4: hsl(232 17% 35%);
   --palette-clr-5: hsl(240 27% 18%);
 
-  --bg-light: var(--palette-clr-1);
+  --bg-hsl-light: 21 35% 92%;
+  --bg-light: hsl(var(--bg-hsl-light));
   --text1-light: var(--palette-clr-4);
   --text2-light: var(--palette-clr-5);
 
-  --bg-dark: var(--palette-clr-5);
+  --bg-hsl-dark: 240 27% 18%;
+  --bg-dark: hsl(var(--bg-hsl-dark));
   --text1-dark: var(--palette-clr-1);
   --text2-dark: var(--palette-clr-2);
 
+  --bg-hsl: var(--bg-hsl-light);
   --bg: var(--bg-light);
   --text1: var(--text1-light);
   --text2: var(--text2-light);
@@ -21,6 +24,7 @@
 }
 
 [data-theme="dark"] {
+  --bg-hsl: var(--bg-hsl-dark);
   --bg: var(--bg-dark);
   --text1: var(--text1-dark);
   --text2: var(--text2-dark);

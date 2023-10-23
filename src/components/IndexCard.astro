@@ -11,7 +11,7 @@ const { list } = Astro.props;
   <div class="lead">
     <slot name="lead" />
   </div>
-  <h3 class="designation | mr-sm-btm">
+  <h3 class="mr-sm-btm">
     <slot name="header" />
   </h3>
   <slot name="body" />
@@ -34,6 +34,10 @@ const { list } = Astro.props;
     padding-block: 2rem;
   }
 
+  .lead {
+    padding-block: 1rem;
+  }
+
   h3 {
     color: var(--text2);
   }
@@ -46,6 +50,7 @@ const { list } = Astro.props;
     .lead {
       grid-row: 1 / 4;
       padding-inline-end: 1em;
+      padding-block: 0;
     }
   }
 </style>
