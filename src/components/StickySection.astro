@@ -2,17 +2,16 @@
 interface Props {
   sectionTitle: string;
   id: string;
-  class?: string;
 }
 
-const { sectionTitle, id, class: className, ...rest } = Astro.props;
+const { sectionTitle, id } = Astro.props;
 ---
 
-<section id={id} class={className} {...rest}>
+<section id={id}>
   <div class="title-container">
     <h2>{sectionTitle}</h2>
   </div>
-  <div>
+  <div class="content | flow">
     <slot />
   </div>
 </section>
@@ -25,21 +24,23 @@ const { sectionTitle, id, class: className, ...rest } = Astro.props;
     top: 0;
     text-transform: uppercase;
     padding-block: 1em;
+    margin-inline: calc(-1 * var(--gap-2));
+    padding-inline: var(--gap-2);
     backdrop-filter: blur(6px);
     z-index: 10;
   }
 
-  div {
-    padding-inline: 1.5rem;
+  h2 {
+    font-size: var(--fs-2);
   }
 
-  @media screen and (min-width: 64em) {
+  .content {
+    --flow-gap: var(--gap-2);
+  }
+
+  @media screen and (min-width: 51em) {
     .title-container {
       display: none;
-    }
-
-    div {
-      padding-inline: 0;
     }
   }
 </style>

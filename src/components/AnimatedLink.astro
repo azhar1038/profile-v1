@@ -7,7 +7,7 @@ interface Props {
 const { href, class: className, ...rest } = Astro.props;
 ---
 
-<a href={href} class:list={[className]} {...rest}>
+<a href={href} class:list={["flex", className]} {...rest}>
   <div>
     <slot />
   </div>
@@ -25,7 +25,6 @@ const { href, class: className, ...rest } = Astro.props;
 
 <style>
   a {
-    display: flex;
     align-items: center;
   }
 

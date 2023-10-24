@@ -7,9 +7,9 @@
       </a>
     </li>
     <li>
-      <a href="#work" class="interactable">
+      <a href="#experience" class="interactable">
         <div class="indicator" aria-hidden="true"></div>
-         Work
+         Experience
       </a>
     </li>
     <li>
@@ -44,7 +44,7 @@
     display: none;
   }
 
-  @media screen and (min-width: 64em) {
+  @media screen and (min-width: 51em) {
     ul {
       flex-direction: column;
       gap: 0;
@@ -54,13 +54,16 @@
       display: inline-flex;
       align-items: center;
       gap: 1rem;
-      padding-block: 0.5rem;
+      margin-block: 0.5em;
     }
 
     .indicator {
+      --_ball-size: 8px;
+      --_color: var(--text1);
+
       display: block;
       position: relative;
-      background-color: var(--text2);
+      background-color: var(--_color);
       height: 2px;
       width: 0px;
       transition: width 200ms ease-in-out;
@@ -70,11 +73,11 @@
     .indicator::after {
       content: "";
       position: absolute;
-      height: 8px;
-      width: 8px;
-      border-radius: 8px;
-      background-color: var(--text2);
-      top: -3px;
+      height: var(--_ball-size);
+      aspect-ratio: 1;
+      border-radius: var(--_ball-size);
+      background-color: var(--_color);
+      top: calc(-1 * var(--_ball-size) / 2 + 1px);
     }
 
     .indicator::before {
@@ -82,7 +85,7 @@
     }
 
     .indicator::after {
-      right: -8px;
+      right: calc(-1 * var(--_ball-size));
     }
 
     a:hover > .indicator,
@@ -93,7 +96,7 @@
 </style>
 
 <script>
-  const sectionIds = ["about", "work", "projects"];
+  const sectionIds = ["about", "experience", "projects"];
   const sections: Map<string, HTMLElement> = new Map();
   const navLinks: Map<string, HTMLAnchorElement> = new Map();
 

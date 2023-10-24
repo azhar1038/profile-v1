@@ -16,12 +16,12 @@ const { start, end, company, role, link, skills } = Astro.props;
 <IndexCard list={skills}>
   <div slot="lead" class="lead">
     <span>{end}</span>
-    <div aria-hidden="true"></div>
+    <div class="mx-3" aria-hidden="true"></div>
     <span>{start}</span>
   </div>
   <AnimatedLink href={link} class="header | interactable" slot="header">
     {role}
-    <span>•</span>
+    <span>{" "}• {" "}</span>
     {company}
   </AnimatedLink>
   <slot slot="body" />
@@ -29,32 +29,40 @@ const { start, end, company, role, link, skills } = Astro.props;
 
 <style>
   .lead {
+    --_ball-size: 10px;
+    --_color: var(--text1);
+
     display: inline-flex;
     flex-direction: row-reverse;
     align-items: center;
     text-transform: uppercase;
-    padding-block-end: 0.5rem;
   }
 
   .lead > div {
     position: relative;
+    background-color: var(--_color);
     width: 2rem;
     height: 2px;
-    background-color: var(--palette-clr-3);
-    margin-inline: 1rem;
+    justify-self: center;
   }
 
-  a {
-    text-decoration: none;
-    color: inherit;
+  .lead > div::before,
+  .lead > div::after {
+    content: "";
+    position: absolute;
+    height: var(--_ball-size);
+    aspect-ratio: 1;
+    border-radius: var(--_ball-size);
+    background-color: var(--_color);
+    top: calc(-1 * var(--_ball-size) / 2 + 1px);
   }
 
-  .header {
-    text-decoration: none;
+  .lead > div::before {
+    left: 0px;
   }
 
-  .header span {
-    padding-inline: 0.5em;
+  .lead > div::after {
+    right: 0px;
   }
 
   @media screen and (min-width: 40em) {
@@ -63,25 +71,16 @@ const { start, end, company, role, link, skills } = Astro.props;
       grid-template-rows: auto 1fr auto;
       text-align: center;
       height: 100%;
-      padding-block: 0;
-      padding-inline-end: 1rem;
     }
 
     .lead > div {
-      height: calc(100% - 40px);
+      height: calc(100% - 4 * var(--_ball-size));
       width: 2px;
-      justify-self: center;
     }
 
     .lead > div::before,
     .lead > div::after {
-      content: "";
-      position: absolute;
-      height: 12px;
-      aspect-ratio: 1;
-      border-radius: 20px;
-      background-color: var(--palette-clr-3);
-      left: -5px;
+      left: calc(-1 * var(--_ball-size) / 2 + 1px);
     }
 
     .lead > div::before {
@@ -89,6 +88,7 @@ const { start, end, company, role, link, skills } = Astro.props;
     }
 
     .lead > div::after {
+      top: auto;
       bottom: 0px;
     }
   }
