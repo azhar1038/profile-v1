@@ -11,14 +11,3 @@ const { title, url } = Astro.props;
   <span class="sr-only">{title}</span>
   <slot />
 </a>
-
-<style>
-  a {
-    color: var(--text1);
-    display: block;
-  }
-
-  a:hover {
-    color: var(--text2);
-  }
-</style>
