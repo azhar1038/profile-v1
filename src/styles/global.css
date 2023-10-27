@@ -16,7 +16,8 @@ html {
 }
 
 body {
-  background-color: var(--bg);
+  accent-color: var(--text1);
+  background-color: var(--surface1);
   color: var(--text1);
   font-family: var(--ff-primary);
   font-size: var(--fs-4);

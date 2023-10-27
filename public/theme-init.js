@@ -20,6 +20,12 @@ const setPreference = () => {
 const reflectPreference = () => {
   document.firstElementChild.setAttribute("data-theme", curTheme);
   themeToggleButton?.setAttribute("aria-label", curTheme);
+  document
+    .querySelector("meta[name='theme-color']")
+    .setAttribute(
+      "content",
+      curTheme === "light" ? "hsl(21 25% 90%)" : "hsl(21 10% 10%)"
+    );
 };
 
 const onThemeChange = () => {
