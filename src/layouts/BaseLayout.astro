@@ -20,8 +20,41 @@ const { title } = Astro.props;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="hsl(21 46% 46%)" />
-    <link rel="icon" type="image/svg+xml" href="/profile-v1/favicon.svg" />
+    <!-- <link rel="icon" href="/profile-v1/favicon.ico" sizes="any" /> -->
+    <link rel="icon" href="/profile-v1/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={Astro.generator} />
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Md Azharuddin" />
+    <meta
+      name="description"
+      content="Full stack web developer. Let's build something cool!"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://azhar1038.github.io/" />
+    <meta property="og:title" content="Md Azharuddin" />
+    <meta
+      property="og:description"
+      content="Full stack web developer. Let's build something cool!"
+    />
+    <meta
+      property="og:image"
+      content="https://azhar1038.github.io/profile-v1/logo.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://azhar1038.github.io/" />
+    <meta property="twitter:title" content="Md Azharuddin" />
+    <meta
+      property="twitter:description"
+      content="Full stack web developer. Let's build something cool!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://azhar1038.github.io/profile-v1/logo.png"
+    />
     <title>{title}</title>
     <script src="/profile-v1/theme-init.js" is:inline></script>
   </head>
