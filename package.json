@@ -10,8 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^3.0.1",
     "@fontsource/poppins": "^5.0.8",
-    "astro": "^3.3.1"
+    "@nanostores/preact": "^0.5.0",
+    "astro": "^3.3.1",
+    "nanostores": "^0.9.4",
+    "preact": "^10.6.5"
   },
   "devDependencies": {
     "sharp": "^0.32.6"

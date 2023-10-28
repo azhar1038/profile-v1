@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectFilter from "../components/ProjectFilter";
+import ProjectList, { type Project } from "../components/ProjectList";
+
+const projectsData = await getCollection("projects");
+const tagsSet = new Set<string>();
+const projects: Project[] = [];
+
+projectsData.forEach((project) => {
+  projects.push({
+    id: project.slug,
+    name: project.data.title,
+    url: project.data.url,
+    tags: project.data.tags,
+    description: project.body,
+  });
+
+  project.data.tags.forEach((tag) => tagsSet.add(tag));
+});
+
+const tags: string[] = ["All", ...Array.from(tagsSet).sort()];
+---
+
+<BaseLayout title="Md Azharuddin | Projects">
+  <div>
+    <h1>Projects</h1>
+    <ProjectFilter options={tags} client:load />
+  </div>
+  <ProjectList projects={projects} client:load />
+</BaseLayout>

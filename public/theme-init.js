@@ -39,7 +39,7 @@ window.onload = () => {
   curTheme = getColorPreference();
   themeToggleButton = document.getElementById("theme-toggle");
   reflectPreference();
-  themeToggleButton.addEventListener("click", onThemeChange);
+  themeToggleButton?.addEventListener("click", onThemeChange);
 };
 
 window
