@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/preact";
 import { currentFilter } from "../../stores/filterStore";
-import styles from "./project-list.module.css";
+import styles from "./ProjectList.module.css";
 
 export interface Project {
   id: string;

@@ -19,7 +19,12 @@ export default function ProjectFilter({ options }: { options: string[] }) {
 
   return (
     <div class={styles.filter}>
-      <select value={filter} onChange={onValueChange} class="interactable">
+      <select
+        value={filter}
+        onChange={onValueChange}
+        class="interactable"
+        title="Project Filter"
+      >
         {options.map((opt) => (
           <option key={opt}>{opt}</option>
         ))}

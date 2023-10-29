@@ -1,7 +1,8 @@
 ---
 title: T&P Cell, IGIT Sarang
 url: https://play.google.com/store/apps/details?id=com.az.igit.tnp
-tags: ["Mobile", "Dart", "Flutter", "Firebase Cloud Messaging", "REST APIs"]
+lastUpdated: "2020-08-01"
+tags: ["Dart", "Flutter", "Firebase", "REST APIs"]
 ---
 
 Training and Placement Cell for Indira Gandhi Institute of Technology, Sarang.

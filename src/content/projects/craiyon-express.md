@@ -1,17 +1,18 @@
 ---
 title: Craiyon Server
 url: https://github.com/azhar1038/craiyon-server-express
+lastUpdated: "2023-07-15"
 tags:
   [
-    "Backend",
     "Typescript",
+    "Node.js",
     "Express",
-    "NodeJS",
     "MySQL",
     "Prisma",
     "Shell Script",
     "REST APIs",
     "JWT",
+    "Docker",
   ]
 ---
 

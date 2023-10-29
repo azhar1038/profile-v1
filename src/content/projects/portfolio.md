@@ -1,7 +1,8 @@
 ---
 title: My Portfolio
 url: https://azhar1038.github.io/profile-v1/
-tags: ["Frontend", "Typescript", "HTML", "CSS", "Astro", "Preact"]
+lastUpdated: "2023-10-29"
+tags: ["Typescript", "Javascript", "HTML", "CSS", "Astro", "Preact"]
 ---
 
 This is my first portfolio site. Design is inspired from Brittany Chiang but has been created using Astro framework.

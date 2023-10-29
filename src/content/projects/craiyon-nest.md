@@ -1,16 +1,17 @@
 ---
 title: Craiyon Server (NestJS)
 url: https://github.com/azhar1038/craiyon-server-nest
+lastUpdated: "2023-10-08"
 tags:
   [
-    "Backend",
     "Typescript",
-    "NodeJS",
+    "Node.js",
     "NestJS",
     "MySQL",
     "TypeORM",
     "REST APIs",
     "JWT",
+    "Docker",
   ]
 ---
 

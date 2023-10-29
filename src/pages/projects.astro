@@ -9,17 +9,19 @@ const projectsData = await getCollection("projects");
 const tagsSet = new Set<string>();
 const projects: Project[] = [];
 
-projectsData.forEach((project) => {
-  projects.push({
-    id: project.slug,
-    name: project.data.title,
-    url: project.data.url,
-    tags: project.data.tags,
-    description: project.body,
-  });
+projectsData
+  .sort((a, b) => (a.data.lastUpdated < b.data.lastUpdated ? 1 : -1))
+  .forEach((project) => {
+    projects.push({
+      id: project.slug,
+      name: project.data.title,
+      url: project.data.url,
+      tags: project.data.tags,
+      description: project.body,
+    });
 
-  project.data.tags.forEach((tag) => tagsSet.add(tag));
-});
+    project.data.tags.forEach((tag) => tagsSet.add(tag));
+  });
 
 const tags: string[] = ["All", ...Array.from(tagsSet).sort()];
 ---

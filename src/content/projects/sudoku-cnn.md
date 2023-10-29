@@ -1,8 +1,16 @@
 ---
 title: Sudoku CNN
 url: https://github.com/azhar1038/Sudoku-CNN
+lastUpdated: "2020-06-26"
 tags:
-  ["Python", "Jupyter Notebook", "CNN", "Neural Network", "Machine Learning"]
+  [
+    "Python",
+    "Jupyter Notebook",
+    "Keras",
+    "Machine Learning",
+    "Neural Network",
+    "CNN",
+  ]
 ---
 
 A Convolutional Neural Network trained on Sudoku dataset taken from Kaggle.
