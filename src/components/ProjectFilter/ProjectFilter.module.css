@@ -1,0 +1,18 @@
+.filter {
+  background-color: var(--surface1);
+  padding-inline-end: 0.5em;
+  border: 2px solid var(--text1);
+  border-radius: 0.5rem;
+}
+
+.filter > select {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.filter > select > option {
+  background-color: var(--surface3);
+}

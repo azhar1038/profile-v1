@@ -1,17 +1,17 @@
 .container {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .card {
-  border: 3px solid var(--text1);
   border-radius: 1rem;
   padding: 1rem;
 
   display: grid;
   height: 100%;
   grid-template-rows: auto 1fr auto;
-  gap: 1rem;
+  gap: 1.5rem;
+  background-color: var(--surface3);
 }
 
 .card > ul {
@@ -22,8 +22,8 @@
 }
 
 .card li {
-  background-color: var(--surface2);
   color: var(--text3);
+  background-color: var(--surface2);
   padding: 0.25em 1em;
   border-radius: 10rem;
 }

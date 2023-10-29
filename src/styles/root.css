@@ -14,6 +14,7 @@
   --surface1-hsl-light: var(--brand-hue) 25% 90%;
   --surface1-light: hsl(var(--surface1-hsl-light));
   --surface2-light: hsl(var(--brand-hue) 10% 18%);
+  --surface3-light: hsl(var(--brand-hue) 25% 80%);
 
   --brand-dark: hsl(
     var(--brand-hue) calc(var(--brand-saturation) / 2)
@@ -25,28 +26,12 @@
   --surface1-hsl-dark: var(--brand-hue) 10% 10%;
   --surface1-dark: hsl(var(--surface1-hsl-dark));
   --surface2-dark: hsl(var(--brand-hue) 7% 15%);
+  --surface3-dark: hsl(var(--brand-hue) 10% 20%);
 
-  /* --palette-clr-1: hsl(21 35% 92%);
-  --palette-clr-2: hsl(11 24% 72%);
-  --palette-clr-3: hsl(309 6% 58%);
-  --palette-clr-4: hsl(232 17% 35%);
-  --palette-clr-5: hsl(240 27% 18%);
-
-  --bg-hsl-light: 21 35% 92%;
-  --bg-light: hsl(var(--bg-hsl-light));
-  --text1-light: var(--palette-clr-4);
-  --text2-light: var(--palette-clr-5);
-
-  --bg-hsl-dark: 240 27% 18%;
-  --bg-dark: hsl(var(--bg-hsl-dark));
-  --text1-dark: var(--palette-clr-1);
-  --text2-dark: var(--palette-clr-2);
-
-  --bg-hsl: var(--bg-hsl-light);
-  --bg: var(--bg-light);*/
   --surface1-hsl: var(--surface1-hsl-light);
   --surface1: var(--surface1-light);
   --surface2: var(--surface2-light);
+  --surface3: var(--surface3-light);
   --text1: var(--text1-light);
   --text2: var(--text2-light);
   --text3: var(--text3-light);
@@ -103,6 +88,7 @@
     --surface1-hsl: var(--surface1-hsl-dark);
     --surface1: var(--surface1-dark);
     --surface2: var(--surface2-dark);
+    --surface3: var(--surface3-dark);
     --text1: var(--text1-dark);
     --text2: var(--text2-dark);
     --text3: var(--text3-dark);
@@ -117,6 +103,7 @@
   --surface1-hsl: var(--surface1-hsl-dark);
   --surface1: var(--surface1-dark);
   --surface2: var(--surface2-dark);
+  --surface3: var(--surface3-dark);
   --text1: var(--text1-dark);
   --text2: var(--text2-dark);
   --text3: var(--text3-dark);
@@ -130,6 +117,7 @@
   --surface1-hsl: var(--surface1-hsl-light);
   --surface1: var(--surface1-light);
   --surface2: var(--surface2-light);
+  --surface3: var(--surface3-light);
   --text1: var(--text1-light);
   --text2: var(--text2-light);
   --text3: var(--text3-light);

@@ -1,7 +1,8 @@
-import { useStore } from "@nanostores/preact";
-import { currentFilter } from "../stores/filterStore";
+import { currentFilter } from "../../stores/filterStore";
 import { useState } from "preact/hooks";
 import type { JSX } from "preact/jsx-runtime";
+
+import styles from "./ProjectFilter.module.css";
 
 export default function ProjectFilter({ options }: { options: string[] }) {
   const [filter, setFilter] = useState<string>("");
@@ -17,10 +18,12 @@ export default function ProjectFilter({ options }: { options: string[] }) {
   };
 
   return (
-    <select value={filter} onChange={onValueChange}>
-      {options.map((opt) => (
-        <option key={opt}>{opt}</option>
-      ))}
-    </select>
+    <div class={styles.filter}>
+      <select value={filter} onChange={onValueChange} class="interactable">
+        {options.map((opt) => (
+          <option key={opt}>{opt}</option>
+        ))}
+      </select>
+    </div>
   );
 }

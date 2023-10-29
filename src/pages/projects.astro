@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectFilter from "../components/ProjectFilter";
 import ProjectList, { type Project } from "../components/ProjectList";
+import ThemeToggle from "../components/ThemeToggle.astro";
 
 const projectsData = await getCollection("projects");
 const tagsSet = new Set<string>();
@@ -24,9 +25,37 @@ const tags: string[] = ["All", ...Array.from(tagsSet).sort()];
 ---
 
 <BaseLayout title="Md Azharuddin | Projects">
-  <div>
+  <header>
     <h1>Projects</h1>
-    <ProjectFilter options={tags} client:load />
-  </div>
-  <ProjectList projects={projects} client:load />
+    <div class="filter">
+      <ProjectFilter options={tags} client:load />
+    </div>
+  </header>
+  <main>
+    <ProjectList projects={projects} client:load />
+  </main>
 </BaseLayout>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    background-color: var(--surface1);
+    padding-block: 1rem;
+    margin-inline: calc(-1 * var(--gap-2));
+    padding-inline: var(--gap-2);
+
+    display: grid;
+    gap: 1rem;
+  }
+
+  main {
+    padding-block: 8rem var(--gap-1);
+  }
+
+  @media screen and (min-width: 48em) {
+    header {
+      grid-template-columns: 1fr auto;
+    }
+  }
+</style>
